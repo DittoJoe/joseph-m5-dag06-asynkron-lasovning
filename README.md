@@ -16,8 +16,7 @@ Det här är modulens svåraste begrepp, och därför har det en hel dag. Webbl�
 2. **Klona din fork:** *Code → HTTPS → kopiera adressen*. I terminalen (Ctrl+ö i VS Code): `git clone <adressen>`. Öppna den nya mappen i VS Code och starta *Live Server*.
 3. **Gör uppgiften.** Spara och kontrollera i webbläsaren och Console (F12) efter varje steg. Gör en commit efter varje avslutat steg: `git add .` och `git commit -m "Beskriv vad du gjorde"`.
 4. **Skicka upp** när du är klar: `git push`.
-5. **Fortsätt i `mitt-projekt`** med dagens projektsteg (längre ned).
-6. **Lämna in i Microsoft Forms.**
+5. **Lämna in i Microsoft Forms.**
 
 Fastnar du: skriv ner exakt var och vad du försökt (och vilket felmeddelande du fick), och ta det först i nästa handledda pass.
 
@@ -57,38 +56,6 @@ Skriv de tre meningarna sist i `forutsagelser.md` med egna ord: vad JavaScript g
 
 I `egen.js`: skriv `vanta(ms)` som returnerar en promise som blir klar efter `ms` millisekunder. Det är den enda koden du skriver idag. Testa den i Console.
 
-## AI-spåret (nivå 2: Specificera och jämför)
-
-**Förutsäg exekveringsordningen** (cirka 25 minuter, efter att du gjort din egen lösning)
-
-Du beskriver exakt vad koden ska göra och skriver testerna. AI föreslår kod, du kör testerna, jämför och förstår. Asynkron kod är det som AI oftast gör fel utan att säga det. Förstår du ordningen kan du upptäcka det.
-
-Regler: egen lösning först, du ska kunna förklara varje rad, och du loggar i `docs/ai-logg.md` i `mitt-projekt` under rubriken *Modul 5*. Reglerna står i `AI-REGLER-MODUL5.md`.
-
-1. Be AI skapa tre korta kodsnuttar med setTimeout och promises som är svåra att förutsäga. Visa inte svaret.
-2. Skriv ner din förutsägelse av utskriftsordningen för varje.
-3. Kör dem i Console och jämför.
-4. Be AI förklara de du missade, steg för steg.
-5. Rita tidslinjen för en av dem på papper och fota eller beskriv den i loggen.
-
-Prompt att utgå från:
-
-```
-Skapa tre korta JavaScript-exempel med setTimeout
-och promises där utskriftsordningen är lurig.
-Visa bara koden, inte svaret. Svårighet: nybörjare.
-Efteråt: förklara ordningen steg för steg
-med händelseloopen som modell.
-```
-
-**Kontrollera med:**
-
-- Kör exemplen i Console.
-- Jämför med din tidslinje.
-- Kan du förklara varför en promise körs före setTimeout 0?
-
-**I ditt projekt:** Skriv docs/async-anteckningar.md: tre ställen i ditt case där programmet måste vänta, och vad användaren ska se medan det väntar.
-
 ## Kontrollista: så vet du att du är klar
 
 - [ ] Du har fyllt i gissning *före* faktisk utskrift för alla elva snuttar.
@@ -97,7 +64,6 @@ med händelseloopen som modell.
 - [ ] Du har fyllt i tidslinjen för snutt 5 och 10.
 - [ ] Du har skrivit de tre meningarna med egna ord.
 - [ ] Du har gjort minst tre commits.
-- [ ] Du har gjort AI-uppgiften och skrivit en post i `docs/ai-logg.md` i `mitt-projekt`.
 
 ## Tips om du fastnar
 
@@ -107,19 +73,6 @@ med händelseloopen som modell.
 - Kör inte om snuttar bara för att se svaret. Gissa först, annars lär du dig ingenting.
 - Det är helt normalt att gissa fel på hälften. Det är poängen.
 
-## Ditt projekt: Planera väntan i ditt projekt (ingen kod idag)
-
-Efter övningen jobbar du vidare i `mitt-projekt`, samma repo som i modul 4. Övningen här är träningsbanan, projektet är det som växer. Dagens steg står också i `PROJEKTSTEG-MODUL5.md` (som du kopierar till ditt projekt dag 1), under **Dag 6**.
-
-1. Skapa `docs/async-anteckningar.md`.
-2. Lista tre ställen i ditt case där programmet måste vänta (till exempel hämta data, skicka ett formulär, spara något).
-3. För varje ställe: skriv vad användaren ska se medan det väntar (laddar), om det går fel (fel) och om det inte finns något (tomt). Använd dina designade tillstånd från modul 3, dag 8.
-4. Hitta ett öppet API utan nyckel som passar ditt case, eller skriv att du istället använder en egen JSON-fil. Lägg in två kandidater med länk till dokumentationen och en exempel-URL. Öppna URL:en i webbläsaren och kontrollera att den ger JSON.
-5. Kontrollera villkoren för API:et (får det användas, kräver det källhänvisning?) och skriv en rad om det.
-6. Commit och push.
-
-**Klart när:** `docs/async-anteckningar.md` har tre ställen, tre tillstånd per ställe och ett valt API (eller en JSON-fil).
-
 ## Inlämning
 
 **Deadline: imorgon klockan 09.00.** Allt lämnas in i Microsoft Forms. Du behöver inte redovisa något muntligt.
@@ -127,8 +80,7 @@ Efter övningen jobbar du vidare i `mitt-projekt`, samma repo som i modul 4. Öv
 I formuläret fyller du i:
 
 1. Länk till din fork av det här repot.
-2. Länk till ditt `mitt-projekt`.
-3. Reflektion: Vilken snutt överraskade dig mest, och vilken regel skrev du för den? Förklara med egna ord varför JavaScript inte väntar på `setTimeout`.
+2. Reflektion: Vilken snutt överraskade dig mest, och vilken regel skrev du för den? Förklara med egna ord varför JavaScript inte väntar på `setTimeout`.
 
 ## Vill du mer? (frivilligt)
 
