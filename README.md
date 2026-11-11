@@ -1,6 +1,6 @@
 # Dag 6 · Asynkron kod: läs och förutsäg
 
-*Modul 5, UI/UX & Frontendutveckling (JavaScript), Lexicon IT-Proffs*
+*Modul 5, UI/UX & Frontendutveckling (TypeScript), Lexicon IT-Proffs*
 
 ## Vad du ska göra idag
 
@@ -10,23 +10,40 @@ Du lär dig förstå **asynkron kod**: kod som körs senare än den står skrive
 
 Det här är modulens svåraste begrepp, och därför har det en hel dag. Webbläsaren kan inte stå och vänta på att ett svar från internet kommer, för då fryser sidan. Istället säger den "kör det här senare, när svaret kommit". Resultatet är att kod inte alltid körs i den ordning den står skriven. Förstår du det här kan du skriva (och granska) all kod som hämtar data. Förstår du det inte blir allt som kommer härnäst gissningar.
 
+## TypeScript idag: Promise-typer
+
+En `Promise` har en typ som säger vad den ger när den är klar:
+
+```ts
+const vanta = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));        // ger inget värde
+const hamta = (ms: number, v: string) => new Promise<string>((resolve) => setTimeout(() => resolve(v), ms)); // ger en string
+```
+
+- `Promise<void>` betyder "blir klar, men ger inget värde".
+- `Promise<string>` betyder "ger en text när den är klar".
+- `Promise.all([...])` får typen av alla delresultaten. Håll musen över och titta.
+- Typerna ändrar inte hur koden körs. Snutt 1–11 beter sig exakt som i JavaScript, och det är hela poängen med dagen: förstå i vilken ordning saker händer.
+
 ## Så arbetar du (samma som alltid)
 
 1. **Forka** dagens repo på GitHub (*Fork → Create fork*).
-2. **Klona din fork:** *Code → HTTPS → kopiera adressen*. I terminalen (Ctrl+ö i VS Code): `git clone <adressen>`. Öppna den nya mappen i VS Code och starta *Live Server*.
-3. **Gör uppgiften.** Spara och kontrollera i webbläsaren och Console (F12) efter varje steg. Gör en commit efter varje avslutat steg: `git add .` och `git commit -m "Beskriv vad du gjorde"`.
-4. **Skicka upp** när du är klar: `git push`.
-5. **Lämna in i Microsoft Forms.**
+2. **Klona din fork:** *Code → HTTPS → kopiera adressen*. I terminalen (Ctrl+ö i VS Code): `git clone <adressen>`. Öppna den nya mappen i VS Code.
+3. **Installera verktygen, en gång per repo:** `npm install` i terminalen.
+4. **Starta servern:** `npm run dev`. Öppna adressen den skriver ut (oftast `http://localhost:5173/`). Tryck F12 och välj fliken *Console*. Stoppa med Ctrl+C.
+5. **Gör uppgiften.** Spara och kontrollera i webbläsaren och Console efter varje steg. Gör en commit efter varje avslutat steg: `git add .` och `git commit -m "Beskriv vad du gjorde"`.
+6. **Kontrollera typerna:** `npm run typecheck`. Tyst betyder att alla typer stämmer. Röda understrykningar i VS Code är TypeScript som varnar.
+7. **Skicka upp** när du är klar: `git push`.
+8. **Lämna in i Microsoft Forms.**
 
-Fastnar du: skriv ner exakt var och vad du försökt (och vilket felmeddelande du fick), och ta det först i nästa handledda pass.
+Fastnar du: skriv ner exakt var och vad du försökt (och vilket felmeddelande du fick), och ta det först i nästa handledda pass. Problem med `npm` eller Node? Läs *Elevguide: Node, Vite och TypeScript*.
 
-Filer som använder `import` fungerar bara när sidan öppnas med *Live Server*. Dubbelklickar du på en HTML-fil hamnar du på `file://` och får ett CORS-fel i Console.
+> Vite tar bara bort typerna och kör koden. Den kontrollerar dem inte. Sidan kan alltså köras trots röda understrykningar.
 
 ## Uppgiften steg för steg
 
 ### Steg 1. Förbered: öppna sidan och titta på en snutt
 
-Starta Live Server på `index.html`. Du ser elva snuttar, var och en med en *Kör*-knapp. Läs snutt 1 och 2 utan att trycka. Öppna `forutsagelser.md`. Du skriver din gissning i tabellen innan du kör.
+Öppna adressen från `npm run dev`. Du ser elva snuttar, var och en med en *Kör*-knapp. Läs snutt 1 och 2 utan att trycka. Öppna `forutsagelser.md`. Du skriver din gissning i tabellen innan du kör.
 
 ### Steg 2. Snutt 1–4
 
@@ -54,7 +71,7 @@ Skriv de tre meningarna sist i `forutsagelser.md` med egna ord: vad JavaScript g
 
 ### Steg 8. Fördjupning (frivillig): din egen vänta-funktion
 
-I `egen.js`: skriv `vanta(ms)` som returnerar en promise som blir klar efter `ms` millisekunder. Det är den enda koden du skriver idag. Testa den i Console.
+I `src/egen.ts`: skriv `vanta(ms)` som returnerar en promise som blir klar efter `ms` millisekunder. Det är den enda koden du skriver idag. Testa den i Console.
 
 ## Kontrollista: så vet du att du är klar
 
@@ -80,7 +97,7 @@ I `egen.js`: skriv `vanta(ms)` som returnerar en promise som blir klar efter `ms
 I formuläret fyller du i:
 
 1. Länk till din fork av det här repot.
-2. Reflektion: Vilken snutt överraskade dig mest, och vilken regel skrev du för den? Förklara med egna ord varför JavaScript inte väntar på `setTimeout`.
+2. Reflektion: Vilken snutt överraskade dig mest, och vilken regel skrev du för den? Förklara med egna ord varför JavaScript inte väntar på `setTimeout`. Vad betyder `Promise<string>` för den som anropar en funktion?
 
 ## Vill du mer? (frivilligt)
 
